@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="fb9a006c-9cf7-4315-b24c-dccc3e43c1bb" 
+        solutionId="fb9a006c-9cf7-4315-b24c-dccc3e43c1bb" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="PDELessonsLearned"
+        sharePointProductVersion="15.0">
+  <features>
+        <featureReference itemId="f376d39d-8d42-4989-bf24-36678d751adf" />
+  </features>
+</package>
