@@ -46,8 +46,24 @@
       <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.5.6.0\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,20 +84,74 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service1.svc" />
+    <Content Include="Services\svcLessonsLearned.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs">
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson.cs">
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Location.cs">
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDELessonsLearned.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PDELessonsLearned.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDELessonsLearned.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PDELessonsLearned.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PDELessonsLearned.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\svcLessonsLearned.svc.cs">
+      <DependentUpon>svcLessonsLearned.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TempSearch.cs">
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRCOffice.cs">
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YESNO.cs">
+      <DependentUpon>PDELessonsLearned.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <EntityDeploy Include="PDELessonsLearned.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PDELessonsLearned.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="PDELessonsLearned.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PDELessonsLearned.edmx</DependentUpon>
+      <LastGenOutput>PDELessonsLearned.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PDELessonsLearned.edmx.diagram">
+      <DependentUpon>PDELessonsLearned.edmx</DependentUpon>
+    </Content>
+    <Content Include="PDELessonsLearned.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PDELessonsLearned.edmx</DependentUpon>
+      <LastGenOutput>PDELessonsLearned.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
