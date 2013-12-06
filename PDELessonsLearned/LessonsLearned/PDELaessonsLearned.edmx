@@ -5,12 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="PDELessonsLearnedModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Client">
-          <Key>
-            <PropertyRef Name="Client" />
-          </Key>
-          <Property Name="Client" Type="nvarchar" MaxLength="255" Nullable="false" />
-        </EntityType>
         <EntityType Name="Lessons">
           <Key>
             <PropertyRef Name="ID" />
@@ -98,6 +92,12 @@
           <Property Name="MaterialsOrProcurement" Type="bit" />
           <Property Name="SSMATimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
+        <EntityType Name="TRCClient">
+          <Key>
+            <PropertyRef Name="Client" />
+          </Key>
+          <Property Name="Client" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <EntityType Name="TRCOffice">
           <Key>
             <PropertyRef Name="TRCOffice" />
@@ -112,10 +112,10 @@
           <Property Name="YESNO" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityContainer Name="PDELessonsLearnedModelStoreContainer">
-          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <EntitySet Name="Lessons" EntityType="Self.Lessons" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <EntitySet Name="TempSearch" EntityType="Self.TempSearch" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="TRCClient" EntityType="Self.TRCClient" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <EntitySet Name="TRCOffice" EntityType="Self.TRCOffice" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <EntitySet Name="YESNO" EntityType="Self.YESNO" Schema="dbo" p3:Type="Tables" xmlns:p3="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
         </EntityContainer>
@@ -124,12 +124,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PDELessonsLearnedModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Client">
-          <Key>
-            <PropertyRef Name="Client1" />
-          </Key>
-          <Property Name="Client1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="Lesson">
           <Key>
             <PropertyRef Name="ID" />
@@ -173,12 +167,19 @@
           <Property Name="Attachment2" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Att2Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="SSMATimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Location1" Relationship="PDELessonsLearnedModel.LocationLesson" FromRole="Lesson" ToRole="Location" />
+          <Property Name="LocationLocation1" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TRCClient" Relationship="PDELessonsLearnedModel.TRCClientLesson" FromRole="Lesson" ToRole="TRCClient" />
+          <NavigationProperty Name="TRCOffice1" Relationship="PDELessonsLearnedModel.TRCOfficeLesson" FromRole="Lesson" ToRole="TRCOffice" />
+          <Property Name="TRCOfficeTRCOffice1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Location">
           <Key>
             <PropertyRef Name="Location1" />
           </Key>
           <Property Name="Location1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Lessons" Relationship="PDELessonsLearnedModel.LocationLesson" FromRole="Location" ToRole="Lesson" />
+          <NavigationProperty Name="TempSearches" Relationship="PDELessonsLearnedModel.LocationTempSearch" FromRole="Location" ToRole="TempSearch" />
         </EntityType>
         <EntityType Name="TempSearch">
           <Key>
@@ -216,12 +217,27 @@
           <Property Name="Training" Type="Boolean" />
           <Property Name="MaterialsOrProcurement" Type="Boolean" />
           <Property Name="SSMATimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="TRCClient" Relationship="PDELessonsLearnedModel.TRCClientTempSearch" FromRole="TempSearch" ToRole="TRCClient" />
+          <Property Name="TRCClientClient" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Location1" Relationship="PDELessonsLearnedModel.LocationTempSearch" FromRole="TempSearch" ToRole="Location" />
+          <Property Name="LocationLocation1" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TRCOffice1" Relationship="PDELessonsLearnedModel.TRCOfficeTempSearch" FromRole="TempSearch" ToRole="TRCOffice" />
+        </EntityType>
+        <EntityType Name="TRCClient">
+          <Key>
+            <PropertyRef Name="Client" />
+          </Key>
+          <Property Name="Client" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Lessons" Relationship="PDELessonsLearnedModel.TRCClientLesson" FromRole="TRCClient" ToRole="Lesson" />
+          <NavigationProperty Name="TempSearches" Relationship="PDELessonsLearnedModel.TRCClientTempSearch" FromRole="TRCClient" ToRole="TempSearch" />
         </EntityType>
         <EntityType Name="TRCOffice">
           <Key>
             <PropertyRef Name="TRCOffice1" />
           </Key>
           <Property Name="TRCOffice1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Lessons" Relationship="PDELessonsLearnedModel.TRCOfficeLesson" FromRole="TRCOffice" ToRole="Lesson" />
+          <NavigationProperty Name="TempSearches" Relationship="PDELessonsLearnedModel.TRCOfficeTempSearch" FromRole="TRCOffice" ToRole="TempSearch" />
         </EntityType>
         <EntityType Name="YESNO">
           <Key>
@@ -231,26 +247,99 @@
           <Property Name="YESNO1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="PDELessonsLearnedEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Clients" EntityType="Self.Client" />
           <EntitySet Name="Lessons" EntityType="Self.Lesson" />
           <EntitySet Name="Locations" EntityType="Self.Location" />
           <EntitySet Name="TempSearches" EntityType="Self.TempSearch" />
+          <EntitySet Name="TRCClients" EntityType="Self.TRCClient" />
           <EntitySet Name="TRCOffices" EntityType="Self.TRCOffice" />
           <EntitySet Name="YESNOes" EntityType="Self.YESNO" />
+          <AssociationSet Name="LocationLesson" Association="PDELessonsLearnedModel.LocationLesson">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Lesson" EntitySet="Lessons" />
+          </AssociationSet>
+          <AssociationSet Name="TRCClientLesson" Association="PDELessonsLearnedModel.TRCClientLesson">
+            <End Role="TRCClient" EntitySet="TRCClients" />
+            <End Role="Lesson" EntitySet="Lessons" />
+          </AssociationSet>
+          <AssociationSet Name="TRCClientTempSearch" Association="PDELessonsLearnedModel.TRCClientTempSearch">
+            <End Role="TRCClient" EntitySet="TRCClients" />
+            <End Role="TempSearch" EntitySet="TempSearches" />
+          </AssociationSet>
+          <AssociationSet Name="TRCOfficeLesson" Association="PDELessonsLearnedModel.TRCOfficeLesson">
+            <End Role="TRCOffice" EntitySet="TRCOffices" />
+            <End Role="Lesson" EntitySet="Lessons" />
+          </AssociationSet>
+          <AssociationSet Name="LocationTempSearch" Association="PDELessonsLearnedModel.LocationTempSearch">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="TempSearch" EntitySet="TempSearches" />
+          </AssociationSet>
+          <AssociationSet Name="TRCOfficeTempSearch" Association="PDELessonsLearnedModel.TRCOfficeTempSearch">
+            <End Role="TRCOffice" EntitySet="TRCOffices" />
+            <End Role="TempSearch" EntitySet="TempSearches" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="LocationLesson">
+          <End Type="PDELessonsLearnedModel.Location" Role="Location" Multiplicity="1" />
+          <End Type="PDELessonsLearnedModel.Lesson" Role="Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location1" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="LocationLocation1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRCClientLesson">
+          <End Type="PDELessonsLearnedModel.TRCClient" Role="TRCClient" Multiplicity="1" />
+          <End Type="PDELessonsLearnedModel.Lesson" Role="Lesson" Multiplicity="*" />
+        </Association>
+        <Association Name="TRCClientTempSearch">
+          <End Type="PDELessonsLearnedModel.TRCClient" Role="TRCClient" Multiplicity="1" />
+          <End Type="PDELessonsLearnedModel.TempSearch" Role="TempSearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRCClient">
+              <PropertyRef Name="Client" />
+            </Principal>
+            <Dependent Role="TempSearch">
+              <PropertyRef Name="TRCClientClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRCOfficeLesson">
+          <End Type="PDELessonsLearnedModel.TRCOffice" Role="TRCOffice" Multiplicity="1" />
+          <End Type="PDELessonsLearnedModel.Lesson" Role="Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRCOffice">
+              <PropertyRef Name="TRCOffice1" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="TRCOfficeTRCOffice1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LocationTempSearch">
+          <End Type="PDELessonsLearnedModel.Location" Role="Location" Multiplicity="1" />
+          <End Type="PDELessonsLearnedModel.TempSearch" Role="TempSearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Location1" />
+            </Principal>
+            <Dependent Role="TempSearch">
+              <PropertyRef Name="LocationLocation1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRCOfficeTempSearch">
+          <End Type="PDELessonsLearnedModel.TRCOffice" Role="TRCOffice" Multiplicity="1" />
+          <End Type="PDELessonsLearnedModel.TempSearch" Role="TempSearch" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PDELessonsLearnedModelStoreContainer" CdmEntityContainer="PDELessonsLearnedEntities">
-          <EntitySetMapping Name="Clients">
-            <EntityTypeMapping TypeName="PDELessonsLearnedModel.Client">
-              <MappingFragment StoreEntitySet="Client">
-                <ScalarProperty Name="Client1" ColumnName="Client" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Lessons">
             <EntityTypeMapping TypeName="PDELessonsLearnedModel.Lesson">
               <MappingFragment StoreEntitySet="Lessons">
@@ -338,6 +427,13 @@
                 <ScalarProperty Name="Training" ColumnName="Training" />
                 <ScalarProperty Name="MaterialsOrProcurement" ColumnName="MaterialsOrProcurement" />
                 <ScalarProperty Name="SSMATimeStamp" ColumnName="SSMATimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRCClients">
+            <EntityTypeMapping TypeName="PDELessonsLearnedModel.TRCClient">
+              <MappingFragment StoreEntitySet="TRCClient">
+                <ScalarProperty Name="Client" ColumnName="Client" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

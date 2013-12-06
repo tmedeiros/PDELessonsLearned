@@ -53,5 +53,11 @@ namespace LessonsLearned
         public byte[] Attachment2 { get; set; }
         public string Att2Desc { get; set; }
         public byte[] SSMATimeStamp { get; set; }
+        public string LocationLocation1 { get; set; }
+        public string TRCOfficeTRCOffice1 { get; set; }
+    
+        public virtual Location Location1 { get; set; }
+        public virtual TRCClient TRCClient { get; set; }
+        public virtual TRCOffice TRCOffice1 { get; set; }
     }
 }

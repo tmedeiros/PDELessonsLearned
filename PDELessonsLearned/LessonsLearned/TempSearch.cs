@@ -46,5 +46,11 @@ namespace LessonsLearned
         public Nullable<bool> Training { get; set; }
         public Nullable<bool> MaterialsOrProcurement { get; set; }
         public byte[] SSMATimeStamp { get; set; }
+        public string TRCClientClient { get; set; }
+        public string LocationLocation1 { get; set; }
+    
+        public virtual TRCClient TRCClient { get; set; }
+        public virtual Location Location1 { get; set; }
+        public virtual TRCOffice TRCOffice1 { get; set; }
     }
 }
