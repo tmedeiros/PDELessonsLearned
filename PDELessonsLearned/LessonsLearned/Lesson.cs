@@ -23,8 +23,8 @@ namespace LessonsLearned
         public string WorkedWell { get; set; }
         public string Project { get; set; }
         public string Client { get; set; }
-        public string Location { get; set; }
-        public string TRCOffice { get; set; }
+        public string LocationName { get; set; }
+        public string Office { get; set; }
         public string DidntWorkWell { get; set; }
         public Nullable<bool> Event { get; set; }
         public Nullable<bool> ProjectReviewLesson { get; set; }
@@ -53,11 +53,5 @@ namespace LessonsLearned
         public byte[] Attachment2 { get; set; }
         public string Att2Desc { get; set; }
         public byte[] SSMATimeStamp { get; set; }
-        public string LocationLocation1 { get; set; }
-        public string TRCOfficeTRCOffice1 { get; set; }
-    
-        public virtual Location Location1 { get; set; }
-        public virtual TRCClient TRCClient { get; set; }
-        public virtual TRCOffice TRCOffice1 { get; set; }
     }
 }

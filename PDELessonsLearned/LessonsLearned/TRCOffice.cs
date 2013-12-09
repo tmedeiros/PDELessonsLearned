@@ -14,15 +14,6 @@ namespace LessonsLearned
     
     public partial class TRCOffice
     {
-        public TRCOffice()
-        {
-            this.Lessons = new HashSet<Lesson>();
-            this.TempSearches = new HashSet<TempSearch>();
-        }
-    
-        public string TRCOffice1 { get; set; }
-    
-        public virtual ICollection<Lesson> Lessons { get; set; }
-        public virtual ICollection<TempSearch> TempSearches { get; set; }
+        public string Office { get; set; }
     }
 }

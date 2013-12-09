@@ -20,7 +20,7 @@ namespace LessonsLearned.Services
         {
             // TODO: set rules to indicate which entity sets and service operations are visible, updatable, etc.
             // Examples:
-            config.SetEntitySetAccessRule("Lessons", EntitySetRights.AllRead | EntitySetRights.AllWrite);
+            config.SetEntitySetAccessRule("Lesson", EntitySetRights.AllRead | EntitySetRights.AllWrite);
             // config.SetServiceOperationAccessRule("MyServiceOperation", ServiceOperationRights.All);
             config.DataServiceBehavior.MaxProtocolVersion = DataServiceProtocolVersion.V3;
         }

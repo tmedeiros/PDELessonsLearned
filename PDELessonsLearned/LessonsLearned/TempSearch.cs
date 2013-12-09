@@ -18,7 +18,7 @@ namespace LessonsLearned
         public string Title { get; set; }
         public Nullable<System.DateTime> OpenedDate { get; set; }
         public string EnteredBy { get; set; }
-        public string TRCOffice { get; set; }
+        public string Office { get; set; }
         public string Client { get; set; }
         public Nullable<int> ProjectNumber { get; set; }
         public byte[] Attachment { get; set; }
@@ -26,7 +26,7 @@ namespace LessonsLearned
         public string Resolution { get; set; }
         public string WorkedWell { get; set; }
         public string PROJECT { get; set; }
-        public string Location { get; set; }
+        public string LocationName { get; set; }
         public string DidntWorkWell { get; set; }
         public Nullable<bool> PandC { get; set; }
         public Nullable<bool> Nuclear { get; set; }
@@ -46,11 +46,5 @@ namespace LessonsLearned
         public Nullable<bool> Training { get; set; }
         public Nullable<bool> MaterialsOrProcurement { get; set; }
         public byte[] SSMATimeStamp { get; set; }
-        public string TRCClientClient { get; set; }
-        public string LocationLocation1 { get; set; }
-    
-        public virtual TRCClient TRCClient { get; set; }
-        public virtual Location Location1 { get; set; }
-        public virtual TRCOffice TRCOffice1 { get; set; }
     }
 }

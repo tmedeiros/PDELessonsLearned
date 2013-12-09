@@ -26,10 +26,10 @@ namespace LessonsLearned
         }
     
         public virtual DbSet<Lesson> Lessons { get; set; }
-        public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<TempSearch> TempSearches { get; set; }
         public virtual DbSet<TRCClient> TRCClients { get; set; }
         public virtual DbSet<TRCOffice> TRCOffices { get; set; }
         public virtual DbSet<YESNO> YESNOes { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
     }
 }

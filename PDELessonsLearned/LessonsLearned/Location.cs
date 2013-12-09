@@ -14,15 +14,6 @@ namespace LessonsLearned
     
     public partial class Location
     {
-        public Location()
-        {
-            this.Lessons = new HashSet<Lesson>();
-            this.TempSearches = new HashSet<TempSearch>();
-        }
-    
-        public string Location1 { get; set; }
-    
-        public virtual ICollection<Lesson> Lessons { get; set; }
-        public virtual ICollection<TempSearch> TempSearches { get; set; }
+        public string LocationName { get; set; }
     }
 }
