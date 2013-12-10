@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Lesson">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ID"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Title"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="65" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OpenedDate"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="EnteredBy"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProjectNumber"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Resolution"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="WorkedWell"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Project"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Client"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LocationName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Office"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DidntWorkWell"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="c_Event"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProjectReviewLesson"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PandC"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Nuclear"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Substation"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Civil"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Transmission"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Automation"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Distribution"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Construction"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ProjectManagement"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TestingAndCommissioning"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PersonalCommunication"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Drafting"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Procedures"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Training"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Scheduling"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="MaterialsOrProcurement"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DesignChangeDevelopment"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="VerificationOrCrossCheck"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Attachment"
+        PropertyType=":Binary?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="AttDesc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Attachment1"
+        PropertyType=":Binary?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Att1Desc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Attachment2"
+        PropertyType=":Binary?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Att2Desc"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="SSMATimeStamp"
+        IsReadOnly="True"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <Hidden />
+          <UseForConcurrency />
+          <Required />
+          <MaxLength
+            IsFixedLength="True"
+            Value="8" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="PDELessonsLearnedData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Lessons"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Lesson" />
+    <QueryOperation
+      Name="Lessons_Single"
+      ReturnType="Lesson">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Lessons" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'ID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Lessons_SingleOrDefault"
+      ReturnType="Lesson">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Lessons" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'ID' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="PDELessonsLearnedDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Lessons">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Lessons" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Lesson/Properties[ID]" />
+        <SsdlProperty
+          MaxLength="65"
+          Name="Title"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Lesson/Properties[Title]" />
+        <SsdlProperty
+          Name="OpenedDate"
+          Nullable="True"
+          Precision="0"
+          Type="datetime2"
+          Property="Lesson/Properties[OpenedDate]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="EnteredBy"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[EnteredBy]" />
+        <SsdlProperty
+          Name="ProjectNumber"
+          Nullable="True"
+          Type="int"
+          Property="Lesson/Properties[ProjectNumber]" />
+        <SsdlProperty
+          Name="Resolution"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="Lesson/Properties[Resolution]" />
+        <SsdlProperty
+          Name="WorkedWell"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="Lesson/Properties[WorkedWell]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Project"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[Project]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Client"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[Client]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="LocationName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[LocationName]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Office"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[Office]" />
+        <SsdlProperty
+          Name="DidntWorkWell"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="Lesson/Properties[DidntWorkWell]" />
+        <SsdlProperty
+          Name="Event"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[c_Event]" />
+        <SsdlProperty
+          Name="ProjectReviewLesson"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[ProjectReviewLesson]" />
+        <SsdlProperty
+          Name="PandC"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[PandC]" />
+        <SsdlProperty
+          Name="Nuclear"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Nuclear]" />
+        <SsdlProperty
+          Name="Substation"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Substation]" />
+        <SsdlProperty
+          Name="Civil"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Civil]" />
+        <SsdlProperty
+          Name="Transmission"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Transmission]" />
+        <SsdlProperty
+          Name="Automation"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Automation]" />
+        <SsdlProperty
+          Name="Distribution"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Distribution]" />
+        <SsdlProperty
+          Name="Construction"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Construction]" />
+        <SsdlProperty
+          Name="ProjectManagement"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[ProjectManagement]" />
+        <SsdlProperty
+          Name="TestingAndCommissioning"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[TestingAndCommissioning]" />
+        <SsdlProperty
+          Name="PersonalCommunication"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[PersonalCommunication]" />
+        <SsdlProperty
+          Name="Drafting"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Drafting]" />
+        <SsdlProperty
+          Name="Procedures"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Procedures]" />
+        <SsdlProperty
+          Name="Training"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Training]" />
+        <SsdlProperty
+          Name="Scheduling"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[Scheduling]" />
+        <SsdlProperty
+          Name="MaterialsOrProcurement"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[MaterialsOrProcurement]" />
+        <SsdlProperty
+          Name="DesignChangeDevelopment"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[DesignChangeDevelopment]" />
+        <SsdlProperty
+          Name="VerificationOrCrossCheck"
+          Nullable="True"
+          Type="bit"
+          Property="Lesson/Properties[VerificationOrCrossCheck]" />
+        <SsdlProperty
+          Name="Attachment"
+          Nullable="True"
+          Type="varbinary(max)"
+          Property="Lesson/Properties[Attachment]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="AttDesc"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[AttDesc]" />
+        <SsdlProperty
+          Name="Attachment1"
+          Nullable="True"
+          Type="varbinary(max)"
+          Property="Lesson/Properties[Attachment1]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Att1Desc"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[Att1Desc]" />
+        <SsdlProperty
+          Name="Attachment2"
+          Nullable="True"
+          Type="varbinary(max)"
+          Property="Lesson/Properties[Attachment2]" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Att2Desc"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Lesson/Properties[Att2Desc]" />
+        <SsdlProperty
+          Name="SSMATimeStamp"
+          Nullable="False"
+          StoreGeneratedPattern="Computed"
+          Type="timestamp"
+          Property="Lesson/Properties[SSMATimeStamp]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>
